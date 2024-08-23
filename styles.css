@@ -269,21 +269,23 @@ footer {
     z-index: -1;
 }
 
+
+
 /* Section Services */
 .services-wrapper {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 600px; /* Augmenté pour plus de place */
+    height: 600px;
     overflow: hidden;
 }
 
 .service-card {
     position: absolute;
-    width: 90%; /* Plus large pour occuper l'espace disponible */
-    max-width: 350px; /* Limite la largeur maximale sur grands écrans */
-    height: 500px; /* Hauteur augmentée */
+    width: 90%;
+    max-width: 350px;
+    height: 500px;
     background: #333;
     border-radius: 15px;
     padding: 20px;
@@ -310,7 +312,6 @@ footer {
 
 .arrow {
     position: absolute;
-    top: 50%;
     width: 50px;
     height: 50px;
     background-color: #ff3333;
@@ -323,7 +324,6 @@ footer {
     transition: background-color 0.3s ease;
     user-select: none;
     z-index: 10;
-    transform: translateY(-50%);
 }
 
 .arrow:hover {
@@ -331,11 +331,15 @@ footer {
 }
 
 .arrow-left {
-    left: 10px; /* Ajusté pour plus d'espace */
+    left: -70px; /* Placé à gauche du service */
+    top: 50%; /* Centré verticalement avec les encadrés */
+    transform: translateY(-50%);
 }
 
 .arrow-right {
-    right: 10px; /* Ajusté pour plus d'espace */
+    right: -70px; /* Placé à droite du service */
+    top: 50%; /* Centré verticalement avec les encadrés */
+    transform: translateY(-50%);
 }
 
 .glow-button {
@@ -357,10 +361,18 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    h1 {
+        font-size: 2em; /* Taille réduite pour tablettes */
+    }
+
+    p {
+        font-size: 1.2em; /* Taille réduite pour tablettes */
+    }
+
     .service-card {
         width: 90%;
         max-width: 90%;
-        height: 400px; /* Ajuste la hauteur pour petits écrans */
+        height: 400px;
     }
 
     .arrow {
@@ -369,16 +381,40 @@ footer {
         font-size: 24px;
         line-height: 40px;
     }
+
+    .arrow-left {
+        left: -50px; /* Ajusté pour tablettes */
+    }
+
+    .arrow-right {
+        right: -50px; /* Ajusté pour tablettes */
+    }
 }
 
 @media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em; /* Taille réduite pour smartphones */
+    }
+
+    p {
+        font-size: 1em; /* Taille réduite pour smartphones */
+    }
+
     .services-wrapper {
-        height: 500px; /* Réduit la hauteur sur très petits écrans */
+        height: 500px;
     }
 
     .service-card {
         height: 350px;
         padding: 15px;
+    }
+
+    .arrow-left {
+        left: -40px; /* Ajusté pour smartphones */
+    }
+
+    .arrow-right {
+        right: -40px; /* Ajusté pour smartphones */
     }
 
     .glow-button {
