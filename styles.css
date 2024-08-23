@@ -313,7 +313,7 @@ footer {
     position: absolute;
     top: 50%;
     width: 50px;
-    height: 20px;
+    height: 50px;
     background-color: #ff3333;
     color: white;
     text-align: center;
@@ -323,7 +323,7 @@ footer {
     font-size: 30px;
     transition: background-color 0.3s ease;
     user-select: none;
-    z-index: 10;
+    z-index: 5;
     transform: translateY(-50%);
 }
 
