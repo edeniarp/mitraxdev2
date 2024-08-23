@@ -275,13 +275,15 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px; /* Ajustez selon la hauteur souhaitée */
+    height: 600px; /* Augmenté pour plus de place */
+    overflow: hidden;
 }
 
 .service-card {
     position: absolute;
-    width: 300px;
-    height: 400px;
+    width: 90%; /* Plus large pour occuper l'espace disponible */
+    max-width: 350px; /* Limite la largeur maximale sur grands écrans */
+    height: 500px; /* Hauteur augmentée */
     background: #333;
     border-radius: 15px;
     padding: 20px;
@@ -301,7 +303,7 @@ footer {
 
 .service-card.next,
 .service-card.prev {
-    opacity: 0.5;
+    opacity: 0.7;
     z-index: 2;
     transform: scale(0.9);
 }
@@ -321,6 +323,7 @@ footer {
     transition: background-color 0.3s ease;
     user-select: none;
     z-index: 10;
+    transform: translateY(-50%);
 }
 
 .arrow:hover {
@@ -328,13 +331,11 @@ footer {
 }
 
 .arrow-left {
-    left: 20px;
-    transform: translateY(-50%);
+    left: 10px; /* Ajusté pour plus d'espace */
 }
 
 .arrow-right {
-    right: 20px;
-    transform: translateY(-50%);
+    right: 10px; /* Ajusté pour plus d'espace */
 }
 
 .glow-button {
@@ -352,4 +353,36 @@ footer {
 .glow-button:hover {
     box-shadow: 0 0 10px #ff3333, 0 0 20px #ff3333, 0 0 30px #ff3333;
     background-color: #ff5555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-card {
+        width: 90%;
+        max-width: 90%;
+        height: 400px; /* Ajuste la hauteur pour petits écrans */
+    }
+
+    .arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        line-height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-wrapper {
+        height: 500px; /* Réduit la hauteur sur très petits écrans */
+    }
+
+    .service-card {
+        height: 350px;
+        padding: 15px;
+    }
+
+    .glow-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
 }
