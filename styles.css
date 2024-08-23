@@ -311,14 +311,14 @@ footer {
 
 .arrow {
     position: absolute;
-    top: 190%; /* Ajusté pour centrer verticalement les flèches */
+    top: 195%; /* Ajusté pour centrer verticalement les flèches */
     width: 50px;
     height: 50px;
     background-color: #ff3333;
     color: white;
     text-align: center;
     line-height: 50px;
-    border-radius: 30%;
+    border-radius: 50%;
     cursor: pointer;
     font-size: 30px;
     transition: background-color 0.3s ease;
@@ -328,9 +328,9 @@ footer {
 }
 
 .arrow-left {
-    left: 7px; /* Positionne le bouton flèche gauche */
+    left: 2px; /* Positionne le bouton flèche gauche */
 }
 
 .arrow-right {
-    right: 7px; /* Positionne le bouton flèche droite */
+    right: 2px; /* Positionne le bouton flèche droite */
 }
