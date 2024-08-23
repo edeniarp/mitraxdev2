@@ -60,27 +60,34 @@ gsap.from(".fade-in", {
 });
 
 
+// script.js
+
 let currentServiceIndex = 0;
 const services = document.querySelectorAll('.service-card');
 const totalServices = services.length;
 
-function showService(index) {
-    const container = document.querySelector('.services-container');
-    container.style.transform = `translateX(-${index * 100}%)`;
+function updateServices() {
+    services.forEach((service, index) => {
+        service.classList.remove('active', 'next', 'prev');
 
-    services.forEach((service, i) => {
-        service.classList.toggle('active', i === index);
+        if (index === currentServiceIndex) {
+            service.classList.add('active');
+        } else if (index === (currentServiceIndex + 1) % totalServices) {
+            service.classList.add('next');
+        } else if (index === (currentServiceIndex - 1 + totalServices) % totalServices) {
+            service.classList.add('prev');
+        }
     });
 }
 
 function nextService() {
     currentServiceIndex = (currentServiceIndex + 1) % totalServices;
-    showService(currentServiceIndex);
+    updateServices();
 }
 
 function prevService() {
     currentServiceIndex = (currentServiceIndex - 1 + totalServices) % totalServices;
-    showService(currentServiceIndex);
+    updateServices();
 }
 
 // Initialisation des particules d'arrière-plan
@@ -88,21 +95,7 @@ particlesJS.load('particles-js', 'particles.json', function() {
   console.log('Particules chargées avec succès.');
 });
 
-// Animation de typewriter sur le texte d'introduction
-gsap.to(".typewriter", { 
-    duration: 3.5, 
-    width: "100%", 
-    delay: 0.5, 
-    ease: "steps(30)" 
-});
-
 // Autres animations GSAP possibles pour différents éléments
-gsap.from(".zoom-in", {
-    duration: 1.5,
-    scale: 0,
-    ease: "back.out(1.7)"
-});
-
 gsap.from(".fade-in", {
     duration: 1.5,
     opacity: 0,
@@ -112,4 +105,4 @@ gsap.from(".fade-in", {
 });
 
 // Initialiser le premier service
-showService(currentServiceIndex);
+updateServices();
