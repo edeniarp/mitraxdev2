@@ -270,110 +270,120 @@ footer {
 }
 
 
-
-/* Flèches de navigation */
-.service-arrow {
-    position: absolute;
-    top: 50%; /* Centrage vertical */
-    transform: translateY(-50%); /* Ajustement pour un alignement centré parfait */
-    font-size: 2em;
-    color: #ff3333;
-    cursor: pointer;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.5); /* Contexte pour meilleure visibilité */
-    padding: 10px;
-    border-radius: 50%;
-}
-
-.service-arrow.left {
-    left: -40px; /* Positionnement à gauche de l'encadré de service */
-}
-
-.service-arrow.right {
-    right: -40px; /* Positionnement à droite de l'encadré de service */
-}
-
 /* Section Services */
-.services-section {
+.services-wrapper {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px 0;
-    height: 500px; /* Hauteur de la section */
+    height: 600px; /* Augmenté pour plus de place */
     overflow: hidden;
 }
 
 .service-card {
     position: absolute;
-    width: 300px; /* Largeur des services */
-    height: 400px; /* Hauteur des services */
+    width: 90%; /* Plus large pour occuper l'espace disponible */
+    max-width: 350px; /* Limite la largeur maximale sur grands écrans */
+    height: 500px; /* Hauteur augmentée */
+    background: #333;
     border-radius: 15px;
-    background-color: #222;
-    box-shadow: 0 0 20px rgba(255, 51, 51, 0.7);
-    text-align: center;
     padding: 20px;
-    transition: transform 0.5s ease;
-}
-
-.service-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-.service-card h3 {
-    font-size: 1.5em;
-    color: #ff3333;
-    margin-bottom: 10px;
-}
-
-.service-card p {
-    font-size: 1em;
-    color: #fff;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    transition: transform 0.6s ease, z-index 0.6s ease;
+    opacity: 0;
+    z-index: 1;
+    transform: scale(0.8);
 }
 
 .service-card.active {
-    z-index: 5;
-    transform: scale(1.1); /* Agrandir le service actif */
-}
-
-.service-card.left, .service-card.right {
+    opacity: 1;
     z-index: 3;
-    transform: scale(0.9); /* Réduction des services en arrière-plan */
-    opacity: 0.7; /* Réduction de l'opacité pour les services en arrière-plan */
+    transform: scale(1);
 }
 
-/* Réduction générale pour les mobiles */
-@media screen and (max-width: 768px) {
-    body {
-        transform: scale(0.85); /* Réduction générale de la page */
-        transform-origin: top center;
+.service-card.next,
+.service-card.prev {
+    opacity: 0.7;
+    z-index: 2;
+    transform: scale(0.9);
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #ff3333;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 30px;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+.arrow:hover {
+    background-color: #ff5555;
+}
+
+.arrow-left {
+    left: 10px; /* Ajusté pour plus d'espace */
+}
+
+.arrow-right {
+    right: 10px; /* Ajusté pour plus d'espace */
+}
+
+.glow-button {
+    background-color: #ff3333;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1em;
+    text-transform: uppercase;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.glow-button:hover {
+    box-shadow: 0 0 10px #ff3333, 0 0 20px #ff3333, 0 0 30px #ff3333;
+    background-color: #ff5555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service-card {
+        width: 90%;
+        max-width: 90%;
+        height: 400px; /* Ajuste la hauteur pour petits écrans */
     }
 
-    .service-arrow {
-        font-size: 1.5em; /* Réduction de la taille des flèches */
+    .arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        line-height: 40px;
     }
+}
 
-    .service-arrow.left {
-        left: 10px; /* Ajustement pour l'écran mobile */
-    }
-
-    .service-arrow.right {
-        right: 10px; /* Ajustement pour l'écran mobile */
+@media (max-width: 480px) {
+    .services-wrapper {
+        height: 500px; /* Réduit la hauteur sur très petits écrans */
     }
 
     .service-card {
-        width: 250px; /* Ajustement de la largeur des services pour les mobiles */
-        height: 350px; /* Ajustement de la hauteur des services pour les mobiles */
+        height: 350px;
+        padding: 15px;
     }
 
-    .service-card h3 {
-        font-size: 1.2em; /* Réduction de la taille du texte pour les titres */
-    }
-
-    .service-card p {
-        font-size: 0.9em; /* Réduction de la taille du texte pour les descriptions */
+    .glow-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
     }
 }
