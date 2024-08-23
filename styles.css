@@ -328,9 +328,9 @@ footer {
 }
 
 .arrow-left {
-    left: 7px; /* Positionne le bouton flèche gauche */
+    left: 5px; /* Positionne le bouton flèche gauche */
 }
 
 .arrow-right {
-    right: 7px; /* Positionne le bouton flèche droite */
+    right: 5px; /* Positionne le bouton flèche droite */
 }
