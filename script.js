@@ -59,7 +59,6 @@ gsap.from(".fade-in", {
     delay: 0.5
 });
 
-// script.js
 
 let currentServiceIndex = 0;
 const services = document.querySelectorAll('.service-card');
