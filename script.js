@@ -63,20 +63,24 @@ gsap.from(".fade-in", {
 
 let currentServiceIndex = 0;
 const services = document.querySelectorAll('.service-card');
+const totalServices = services.length;
 
 function showService(index) {
+    const container = document.querySelector('.services-container');
+    container.style.transform = `translateX(-${index * 100}%)`;
+
     services.forEach((service, i) => {
         service.classList.toggle('active', i === index);
     });
 }
 
 function nextService() {
-    currentServiceIndex = (currentServiceIndex + 1) % services.length;
+    currentServiceIndex = (currentServiceIndex + 1) % totalServices;
     showService(currentServiceIndex);
 }
 
 function prevService() {
-    currentServiceIndex = (currentServiceIndex - 1 + services.length) % services.length;
+    currentServiceIndex = (currentServiceIndex - 1 + totalServices) % totalServices;
     showService(currentServiceIndex);
 }
 
