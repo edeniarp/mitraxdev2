@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio - Mitrax</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- Particules d'arrière-plan -->
+    <div id="particles-js"></div>
+
+    <!-- Menu de navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#home" class="nav-link">Accueil</a>
+            <a href="#about" class="nav-link">À propos</a>
+            <a href="#projects" class="nav-link">Projets</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="https://discord.com/invite/ppBrcSHSfJ" target="_blank" class="nav-link discord-link">
+                <img src="https://1000logos.net/wp-content/uploads/2021/06/Discord-logo.png" alt="Discord Logo" class="discord-logo">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page d'accueil -->
+    <header id="home">
+        <div class="hero-container">
+            <h1 class="glow-text">Bienvenue sur Mon Portfolio</h1>
+            <p class="typewriter">Développeur FiveM | Créateur de bases uniques</p>
+        </div>
+    </header>
+
+    <!-- Section "À propos de moi" avec animations -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <p class="fade-in">Je suis Mitrax, un développeur FiveM passionné par la création de bases en tout genre dans le domaine de FiveM !.</p>
+            <img src="mon-avatar.png" alt="Ma photo" class="avatar zoom-in">
+        </div>
+    </section>
+
+    <!-- Section "Projets" avec animations -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Mes Projets</h2>
+            <div class="project-card" onclick="openModal('project1')">
+                <img src="project1.png" alt="Projet 1" class="project-image scale-up">
+                <h3>Projet 1</h3>
+            </div>
+            <div class="project-card" onclick="openModal('project2')">
+                <img src="project2.png" alt="Projet 2" class="project-image scale-up">
+                <h3>Projet 2</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fenêtre modale pour les projets -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-img" src="" alt="Image du projet">
+            <div id="modal-text"></div>
+            <button class="glow-button" onclick="closeModal()">Retour</button>
+        </div>
+    </div>
+
+    <!-- Section "Contact" avec formulaire stylé -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contactez-moi</h2>
+            <form>
+                <input type="text" placeholder="Votre nom" class="input-field" required>
+                <input type="email" placeholder="Votre email" class="input-field" required>
+                <textarea placeholder="Votre message" class="input-field" required></textarea>
+                <button type="submit" class="glow-button">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+        <div class="social-icons">
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+            <!-- Ajouter plus de liens sociaux ici -->
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
